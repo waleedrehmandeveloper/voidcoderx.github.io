@@ -1,5 +1,6 @@
 :root{
     --navfont: 15px;
+    --btnpadding: 10px 5px;
 }
 * {
   margin: 0;
@@ -9,12 +10,7 @@
 
 body {
   font-family: monospace;
-    background-color: #fff;
-  background-image: 
-    linear-gradient(#e6e6e6 1px, transparent 1px),
-    linear-gradient(90deg, #e6e6e6 1px, transparent 1px);
-  
-  background-size: 10px 10px;
+    background: radial-gradient(circle at top, #0f131a, #05070c);
 }
 nav{
     background-color: #010409;
@@ -68,20 +64,45 @@ nav{
     width: 100%;
     height: 90vh;
     display: flex;
+    justify-content: space-between;
     align-items: center; 
-    padding: 0px 50px;
+    padding: 0px 80px;
 }
 .heroimgsection{
     width: 40%;
-    height: auto;
-}
-.heroimg {
-    border: 0.4px solid #9097a0;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     overflow: hidden;
-    box-shadow: 0px 0px 1px #010409;
+}
+
+/* .heroimgborder{
+    border: 1px solid #9097a0;
+    border-radius: 50%;
+} */
+
+/* dots layer */
+.heroimgsection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  -webkit-mask-image: radial-gradient(circle, black 50%, transparent 90%);
+  mask-image: radial-gradient(circle, black 50%, transparent 90%);
+}
+
+.heroimg {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border: 0.1px solid #e96919;
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: 0 0px 20px #e96919;
 }
 
 .heroimg img {
@@ -90,11 +111,12 @@ nav{
     object-fit: cover;
 }
 .herocontentmain{
-    background-color: #010409f2;
+    background-color: transparent;
+    border: 0.1px solid #696f76;
     text-align: start;
-    width: 60%;
-    height: 550px;
-    border-radius: 4px;
+    width: 55%;
+    height: 630px;
+    border-radius: 10px;
     color: white;
     padding: 40px 25px;
 }
@@ -107,8 +129,8 @@ nav{
     margin-top: -10px;
 }
 .herocontentmain span{
-    font-size: 18px;
-    color: #ffffff;
+    font-size: 17px;
+    color: #eaeaea;
 }
 .contribution_graph{
     width: 80%;
@@ -116,5 +138,56 @@ nav{
 .maincontribute{
     border: 0.6px solid #9097a0;
     border-radius: 10px;
-    margin-top: 40px;
+}
+
+.hellohero{
+    border: 0.4px solid #29da4cfb;
+    background-color: #15962f3a;
+    width: 160px;
+    padding: var(--btnpadding);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hellohero p{
+    color: #29da4cfb;
+    margin: 0;         
+    line-height: 1;
+    font-size: 17px;
+}
+.herocontentbtnsmain{
+    display: flex;
+    gap: 10px;
+}
+
+.herocontentbtnsmain button{
+    display: flex;
+    gap: 10px;
+    background: transparent;
+    border: 0.4px solid #696f76;
+    border-radius: 4px;
+    padding: var(--btnpadding);
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heroiconsmain{
+    display: flex;
+    gap: 15px;
+}
+.heroicons{
+    border-radius: 10px;
+    border: 0.4px solid #696f76;
+    padding: 10px;
+}
+.heroicons img{
+   width: 30px;
+   height: 30px;
+}
+.connectme{
+    color: rgb(166, 166, 166);
+    font-size: 16px;
 }
