@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>voidcoderx | Muhammad Waleed Rehman</title>
+<link rel="icon" type="image/png" href="assets/images/blockprofileimage.png">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <!-- Material Symbols -->
@@ -97,7 +98,15 @@
           },
         },
       }
-    </script>
+</script>
+<script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "aCclOv-sPmkZ794A1",
+        });
+    })();
+</script>
 <style>
         html { scroll-behavior: smooth; }
         body {
@@ -228,7 +237,7 @@
             }
             .mouse-glow, #particle-canvas { display: none !important; }
         }
-    </style>
+</style>
 </head>
 <body class="font-body-md selection:bg-primary-container selection:text-on-primary-container">
 <!-- Particles Background -->
@@ -582,7 +591,7 @@
 <span class="material-symbols-outlined text-primary-container">location_on</span>
 </div>
 <div>
-<h4 class="font-headline-lg text-[18px] text-primary mb-1">Office Location</h4>
+<h4 class="font-headline-lg text-[18px] text-primary mb-1">Address Location</h4>
 <p class="text-on-surface-variant text-sm">Karachi, Pakistan</p>
 </div>
 </div>
@@ -601,34 +610,33 @@
 </div>
 <div>
 <h4 class="font-headline-lg text-[18px] text-primary mb-1">Email Support</h4>
-<p class="text-on-surface-variant text-sm">hello@voidcoderx.com</p>
+<p class="text-on-surface-variant text-sm">waleedrehman.developer@gmail.com</p>
 </div>
 </div>
 </div>
 <!-- Right: Contact Form -->
 <div class="glass-card p-8 md:p-10 rounded-xl">
-<form class="space-y-6">
+<form class="space-y-6" id="contactForm">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 <div class="space-y-2">
 <label class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest ml-1">Full Name</label>
-<input class="w-full bg-surface-container-high/50 border border-outline-variant/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-container text-sm transition-colors" placeholder="John Doe" type="text"/>
+<input id="fullname" class="w-full bg-surface-container-high/50 border border-outline-variant/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-container text-sm transition-colors" placeholder="John Doe" type="text"/>
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest ml-1">Email Address</label>
-<input class="w-full bg-surface-container-high/50 border border-outline-variant/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-container text-sm transition-colors" placeholder="john@example.com" type="email"/>
+<input id="emailaddress" class="w-full bg-surface-container-high/50 border border-outline-variant/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-container text-sm transition-colors" placeholder="john@example.com" type="email"/>
 </div>
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest ml-1">Subject</label>
-<input class="w-full bg-surface-container-high/50 border border-outline-variant/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-container text-sm transition-colors" placeholder="Project Inquiry" type="text"/>
+<input id="subject" class="w-full bg-surface-container-high/50 border border-outline-variant/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-container text-sm transition-colors" placeholder="Project Inquiry" type="text"/>
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest ml-1">Message</label>
-<textarea class="w-full bg-surface-container-high/50 border border-outline-variant/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-container text-sm transition-colors h-32" placeholder="Tell me about your project..."></textarea>
+<textarea id="message" class="w-full bg-surface-container-high/50 border border-outline-variant/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary-container text-sm transition-colors h-32" placeholder="Tell me about your project..."></textarea>
 </div>
-<button class="w-full bg-primary-container text-on-primary-container py-4 font-label-caps text-label-caps font-bold hover:shadow-[0_0_30px_rgba(0,255,153,0.4)] transition-all neon-glow-green-pulse">
-                        Transmit Message
-                    </button>
+<button id="sendbtn" type="submit" class="w-full bg-primary-container text-on-primary-container py-4 font-label-caps text-label-caps font-bold hover:shadow-[0_0_30px_rgba(0,255,153,0.4)] transition-all neon-glow-green-pulse">
+Transmit Message</button>
 </form>
 </div>
 </div>
@@ -644,7 +652,7 @@
 <div class="flex gap-8">
 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">GitHub</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">LinkedIn</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Instagram</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Email</a>
 </div>
 </div>
@@ -655,6 +663,7 @@
 <span class="material-symbols-outlined">message</span>
 </button>
 </div>
+<script src="script.js"></script>
 <script>
     // 1. Particle System
     const canvas = document.getElementById('particle-canvas');
