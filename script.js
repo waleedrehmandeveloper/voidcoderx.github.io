@@ -6,19 +6,28 @@ form.addEventListener("submit", sendemail);
 
 async function sendemail(e){
     e.preventDefault();
-
     if(isSending) return;
+
+  let parms = {
+        name: document.getElementById("fullname").value.trim(),
+        email: document.getElementById("emailaddress").value.trim(),
+        subject: document.getElementById("subject").value.trim(),
+        message: document.getElementById("message").value.trim(),
+    };
+
+    if(
+        parms.name === ""|| 
+        parms.email ==="" || 
+        parms.message === "" ||
+        parms.subject === ""
+    ){
+        alert("Please fill all feilds before sending.");
+        return
+    }
 
     isSending = true;
 
     btn.innerText = "Sending...";
-
-    let parms = {
-        name: document.getElementById("fullname").value,
-        email: document.getElementById("emailaddress").value,
-        subject: document.getElementById("subject").value,
-        message: document.getElementById("message").value,
-    };
 
     
     try {
