@@ -9,6 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <!-- Material Symbols -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Iconify -->
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<!-- Iconify -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -228,6 +231,44 @@
             transform: translateX(-50%);
         }
 
+        /* Project filter tabs */
+        .project-tab {
+            position: relative;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+            padding: 10px 24px;
+            border-radius: 9999px;
+            border: 1px solid rgba(185, 203, 187, 0.15);
+            color: #b9cbbb;
+            background: rgba(15, 19, 33, 0.5);
+            transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .project-tab:hover {
+            color: #dfe1f6;
+            border-color: rgba(0, 255, 153, 0.4);
+        }
+        .project-tab.active {
+            color: #00391e;
+            background: #00ff99;
+            border-color: #00ff99;
+            box-shadow: 0 0 25px rgba(0, 255, 153, 0.35);
+        }
+        .project-card {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .project-card.hidden-card {
+            display: none;
+        }
+        .project-empty-state {
+            display: none;
+        }
+        .project-empty-state.show-empty {
+            display: flex;
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .animate-floating, .animate-floating-slow, .neon-glow-orange, .neon-glow-green-pulse, .reveal, .pixel-anim, .animate-pulse-glow, .animate-marquee {
                 animation: none !important;
@@ -319,6 +360,7 @@
                     </button>
 </div>
 </div>
+
 <!-- GitHub Activity -->
 <div class="mt-12 glass-card p-6 rounded-xl overflow-hidden">
 <div class="flex justify-between items-center mb-4">
@@ -335,6 +377,291 @@
 <div class="grid grid-flow-col grid-rows-7 gap-1.5 overflow-x-auto pb-2" id="github-graph"></div>
 </div>
 </div>
+</section>
+<section style="margin-top: 60px;">
+<section>
+    <!-- What I Actually Build -->
+<section class="mb-section-gap reveal"  id="capabilities">
+
+    <div class="text-center mb-16">
+
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <iconify-icon
+                icon="solar:code-square-linear"
+                class="text-primary-container text-3xl">
+            </iconify-icon>
+
+            <h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-widest">
+                What I Actually Build
+            </h2>
+        </div>
+
+        <div class="w-24 h-1 bg-primary-container mx-auto"></div>
+
+        <p class="mt-6 text-on-surface-variant max-w-2xl mx-auto text-sm leading-relaxed">
+            Real-world applications, backend systems, mobile experiences,
+            and interactive interfaces built with modern technologies.
+        </p>
+
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- 01 Web Applications -->
+        <div class="glass-card p-8 rounded-xl group relative overflow-hidden">
+
+            <div class="absolute top-0 right-0 text-[80px] font-bold text-primary-container/5 leading-none">
+                01
+            </div>
+
+            <div class="flex items-start justify-between mb-6">
+
+                <div class="w-14 h-14 rounded-xl bg-primary-container/10
+                            border border-primary-container/20
+                            flex items-center justify-center
+                            group-hover:bg-primary-container/20 transition-all">
+
+                    <iconify-icon
+                        icon="solar:monitor-smartphone-linear"
+                        class="text-primary-container text-3xl">
+                    </iconify-icon>
+
+                </div>
+
+                <span class="font-code-sm text-primary-container text-xs">
+                    01
+                </span>
+
+            </div>
+
+            <h3 class="font-headline-lg text-2xl text-primary mb-3">
+                Web Applications
+            </h3>
+
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                Responsive and scalable web applications with modern
+                frontend interfaces and powerful backend systems.
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+
+                <span class="px-3 py-1 rounded bg-primary-container/10
+                             border border-primary-container/20
+                             text-primary-container text-xs font-code-sm">
+                    React
+                </span>
+
+                <span class="px-3 py-1 rounded bg-primary-container/10
+                             border border-primary-container/20
+                             text-primary-container text-xs font-code-sm">
+                    PHP
+                </span>
+
+                <span class="px-3 py-1 rounded bg-primary-container/10
+                             border border-primary-container/20
+                             text-primary-container text-xs font-code-sm">
+                    Laravel
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- 02 Mobile Applications -->
+        <div class="glass-card p-8 rounded-xl group relative overflow-hidden">
+
+            <div class="absolute top-0 right-0 text-[80px] font-bold text-secondary/5 leading-none">
+                02
+            </div>
+
+            <div class="flex items-start justify-between mb-6">
+
+                <div class="w-14 h-14 rounded-xl bg-secondary/10
+                            border border-secondary/20
+                            flex items-center justify-center
+                            group-hover:bg-secondary/20 transition-all">
+
+                    <iconify-icon
+                        icon="solar:smartphone-linear"
+                        class="text-secondary text-3xl">
+                    </iconify-icon>
+
+                </div>
+
+                <span class="font-code-sm text-secondary text-xs">
+                    02
+                </span>
+
+            </div>
+
+            <h3 class="font-headline-lg text-2xl text-primary mb-3">
+                Mobile Applications
+            </h3>
+
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                Cross-platform mobile applications with responsive layouts,
+                smooth interactions, and clean user experiences.
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+
+                <span class="px-3 py-1 rounded bg-secondary/10
+                             border border-secondary/20
+                             text-secondary text-xs font-code-sm">
+                    Flutter
+                </span>
+
+                <span class="px-3 py-1 rounded bg-secondary/10
+                             border border-secondary/20
+                             text-secondary text-xs font-code-sm">
+                    Dart
+                </span>
+
+                <span class="px-3 py-1 rounded bg-secondary/10
+                             border border-secondary/20
+                             text-secondary text-xs font-code-sm">
+                    Firebase
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- 03 Backend Systems -->
+        <div class="glass-card p-8 rounded-xl group relative overflow-hidden">
+
+            <div class="absolute top-0 right-0 text-[80px] font-bold text-tertiary-fixed-dim/5 leading-none">
+                03
+            </div>
+
+            <div class="flex items-start justify-between mb-6">
+
+                <div class="w-14 h-14 rounded-xl bg-tertiary-fixed-dim/10
+                            border border-tertiary-fixed-dim/20
+                            flex items-center justify-center
+                            group-hover:bg-tertiary-fixed-dim/20 transition-all">
+
+                    <iconify-icon
+                        icon="solar:server-square-linear"
+                        class="text-tertiary-fixed-dim text-3xl">
+                    </iconify-icon>
+
+                </div>
+
+                <span class="font-code-sm text-tertiary-fixed-dim text-xs">
+                    03
+                </span>
+
+            </div>
+
+            <h3 class="font-headline-lg text-2xl text-primary mb-3">
+                Backend Systems
+            </h3>
+
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                REST APIs, database-driven applications, authentication,
+                business logic, and server-side systems.
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+
+                <span class="px-3 py-1 rounded bg-tertiary-fixed-dim/10
+                             border border-tertiary-fixed-dim/20
+                             text-tertiary-fixed-dim text-xs font-code-sm">
+                    Node.js
+                </span>
+
+                <span class="px-3 py-1 rounded bg-tertiary-fixed-dim/10
+                             border border-tertiary-fixed-dim/20
+                             text-tertiary-fixed-dim text-xs font-code-sm">
+                    Express
+                </span>
+
+                <span class="px-3 py-1 rounded bg-tertiary-fixed-dim/10
+                             border border-tertiary-fixed-dim/20
+                             text-tertiary-fixed-dim text-xs font-code-sm">
+                    MySQL
+                </span>
+
+                <span class="px-3 py-1 rounded bg-tertiary-fixed-dim/10
+                             border border-tertiary-fixed-dim/20
+                             text-tertiary-fixed-dim text-xs font-code-sm">
+                    MongoDB
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- 04 Interactive Experiences -->
+        <div class="glass-card p-8 rounded-xl group relative overflow-hidden">
+
+            <div class="absolute top-0 right-0 text-[80px] font-bold text-primary-fixed/5 leading-none">
+                04
+            </div>
+
+            <div class="flex items-start justify-between mb-6">
+
+                <div class="w-14 h-14 rounded-xl bg-primary-fixed/10
+                            border border-primary-fixed/20
+                            flex items-center justify-center
+                            group-hover:bg-primary-fixed/20 transition-all">
+
+                    <iconify-icon
+                        icon="solar:magic-stick-3-linear"
+                        class="text-primary-fixed text-3xl">
+                    </iconify-icon>
+
+                </div>
+
+                <span class="font-code-sm text-primary-fixed text-xs">
+                    04
+                </span>
+
+            </div>
+
+            <h3 class="font-headline-lg text-2xl text-primary mb-3">
+                Interactive Experiences
+            </h3>
+
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                Animated interfaces, interactive components, API integrations,
+                and responsive digital experiences.
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+
+                <span class="px-3 py-1 rounded bg-primary-fixed/10
+                             border border-primary-fixed/20
+                             text-primary-fixed text-xs font-code-sm">
+                    GSAP
+                </span>
+
+                <span class="px-3 py-1 rounded bg-primary-fixed/10
+                             border border-primary-fixed/20
+                             text-primary-fixed text-xs font-code-sm">
+                    REST APIs
+                </span>
+
+                <span class="px-3 py-1 rounded bg-primary-fixed/10
+                             border border-primary-fixed/20
+                             text-primary-fixed text-xs font-code-sm">
+                    Responsive UI
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</section>
 </section>
 <!-- Skills & Technologies (Marquee) -->
 <section class="mb-section-gap reveal overflow-hidden" id="skills">
@@ -359,7 +686,7 @@
 <span class="font-code-sm text-primary">Bootstrap</span>
 </div>
 <div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-primary-container/50">
-<span class="font-code-sm text-primary">Angular</span>
+<span class="font-code-sm text-primary">React Js</span>
 </div>
 <div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-primary-container/50">
 <span class="font-code-sm text-primary">GSAP</span>
@@ -373,14 +700,14 @@
 <div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-secondary-container/50">
 <span class="font-code-sm text-secondary">Laravel</span>
 </div>
-<div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-secondary-container/50">
-<span class="font-code-sm text-secondary">ASP.NET Core</span>
-</div>
 <div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-tertiary-fixed-dim/50">
 <span class="font-code-sm text-tertiary-fixed-dim">Flutter</span>
 </div>
 <div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-tertiary-fixed-dim/50">
 <span class="font-code-sm text-tertiary-fixed-dim">Dart</span>
+</div>
+<div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-tertiary-fixed-dim/50">
+<span class="font-code-sm text-tertiary-fixed-dim">Firebase</span>
 </div>
 <div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-primary-fixed/50">
 <span class="font-code-sm text-primary-fixed">MySQL</span>
@@ -404,7 +731,7 @@
 <span class="font-code-sm text-primary">Bootstrap</span>
 </div>
 <div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-primary-container/50">
-<span class="font-code-sm text-primary">Angular</span>
+<span class="font-code-sm text-primary">React Js</span>
 </div>
 <div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-primary-container/50">
 <span class="font-code-sm text-primary">GSAP</span>
@@ -417,9 +744,6 @@
 </div>
 <div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-secondary-container/50">
 <span class="font-code-sm text-secondary">Laravel</span>
-</div>
-<div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-secondary-container/50">
-<span class="font-code-sm text-secondary">ASP.NET Core</span>
 </div>
 <div class="glass-card px-8 py-4 rounded-xl flex items-center gap-3 border-b-2 border-tertiary-fixed-dim/50">
 <span class="font-code-sm text-tertiary-fixed-dim">Flutter</span>
@@ -439,13 +763,20 @@
 </section>
 <!-- Featured Projects Section -->
 <section class="mb-section-gap reveal" id="projects">
-<div class="text-center mb-16">
+<div class="text-center mb-10">
 <h2 class="font-headline-lg text-headline-lg text-primary uppercase mb-4 tracking-widest">Featured Projects</h2>
 <div class="w-24 h-1 bg-primary-container mx-auto"></div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project Filter Tabs -->
+<div class="flex flex-wrap justify-center gap-4 mb-12" id="project-tabs">
+<button class="project-tab active" data-filter="all">All</button>
+<button class="project-tab" data-filter="webapp">Web App</button>
+<button class="project-tab" data-filter="mobile">Mobile App</button>
+<button class="project-tab" data-filter="frontend">Frontend</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="project-grid">
 <!-- Project 1 -->
-<div class="glass-card group rounded-xl overflow-hidden flex flex-col">
+<div class="glass-card group rounded-xl overflow-hidden flex flex-col project-card" data-category="webapp">
 
     <div class="relative h-64 overflow-hidden">
 
@@ -490,7 +821,7 @@
 
 </div>
 <!-- Project 2 -->
-<div class="glass-card group rounded-xl overflow-hidden flex flex-col">
+<div class="glass-card group rounded-xl overflow-hidden flex flex-col project-card" data-category="webapp">
 
     <div class="relative h-64 overflow-hidden">
 
@@ -535,7 +866,7 @@
 
 </div>
 <!-- Project 3 -->
-<div class="glass-card group rounded-xl overflow-hidden flex flex-col">
+<div class="glass-card group rounded-xl overflow-hidden flex flex-col project-card" data-category="mobile">
 <div class="h-64 bg-surface-container-high relative overflow-hidden">
 <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
 <div class="p-8 h-full flex flex-col justify-end relative z-20">
@@ -554,7 +885,7 @@
 </div>
 </div>
 <!-- Project 4 -->
-<div class="glass-card group rounded-xl overflow-hidden flex flex-col">
+<div class="glass-card group rounded-xl overflow-hidden flex flex-col project-card" data-category="webapp">
 
     <div class="relative h-64 overflow-hidden">
 
@@ -597,6 +928,58 @@
 
     </div>
 
+</div>
+<!-- Project 5 -->
+<div class="glass-card group rounded-xl overflow-hidden flex flex-col project-card" data-category="webapp">
+
+    <div class="relative h-64 overflow-hidden">
+
+        <!-- Project Image -->
+        <img
+            src="assets/images/erp_project.png"
+            alt="Ecommerce Webapp"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+        <!-- Content -->
+        <div class="absolute bottom-0 left-0 p-6 z-10">
+            <h3 class="font-headline-lg text-[24px] text-white mb-2">
+                Property Management System
+            </h3>
+
+            <p class="text-gray-200 text-sm">
+                Full-stack Property Management System for builders to manage office operations, sales, sales teams, assignments, and business reports online.**
+            </p>
+        </div>
+
+    </div>
+
+    <div class="p-8 bg-surface-container/50 flex flex-col flex-grow">
+
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[10px] font-label-caps bg-primary-container/10 text-primary-container px-2 py-1 rounded">PHP</span>
+            <span class="text-[10px] font-label-caps bg-primary-container/10 text-primary-container px-2 py-1 rounded">AJAX</span>
+            <span class="text-[10px] font-label-caps bg-primary-container/10 text-primary-container px-2 py-1 rounded">MySQL</span>
+        </div>
+
+        <a
+            href="#"
+            class="mt-auto text-primary-container font-label-caps flex items-center gap-2 hover:translate-x-2 transition-transform">
+            Explore Case Study
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+
+    </div>
+
+</div>
+<!-- Empty state: shown when a filter has no matching projects -->
+<div class="project-empty-state md:col-span-2 flex-col items-center justify-center text-center py-16 border border-dashed border-outline-variant/30 rounded-xl">
+<span class="material-symbols-outlined text-5xl text-on-surface-variant mb-4">folder_off</span>
+<h3 class="font-headline-lg text-[20px] text-primary mb-2">No projects here yet</h3>
+<p class="text-on-surface-variant text-sm max-w-sm">This category is on the way — check back soon or explore the other tabs.</p>
+</div>
 </div>
 </section>
 <!-- Experience & Education Section -->
@@ -851,6 +1234,39 @@ Transmit Message</button>
             nav.classList.add('py-4');
             nav.classList.remove('py-2');
         }
+    });
+
+    // 6. Project Filter Tabs
+    const projectTabs = document.querySelectorAll('.project-tab');
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectEmptyState = document.querySelector('.project-empty-state');
+
+    projectTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            projectTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const filter = tab.getAttribute('data-filter');
+            let visibleCount = 0;
+
+            projectCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filter === 'all' || filter === category) {
+                    card.classList.remove('hidden-card');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden-card');
+                }
+            });
+
+            if (projectEmptyState) {
+                if (visibleCount === 0) {
+                    projectEmptyState.classList.add('show-empty');
+                } else {
+                    projectEmptyState.classList.remove('show-empty');
+                }
+            }
+        });
     });
 </script>
 </body></html>
